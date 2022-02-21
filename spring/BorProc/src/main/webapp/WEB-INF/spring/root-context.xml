@@ -8,7 +8,7 @@
 		<property name="username" value="Study"/>
 		<property name="password" value="Study"/>
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-		<property name="url" value="jdbc:oracle:thin:@localhost:xe"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
 		<property name="initialSize" value="30"/>
 	</bean>
 	

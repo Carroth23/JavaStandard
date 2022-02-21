@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="/board/list"><button>게시판으로 이동</button></a>
+	<a href="/board/list?cpage=1"><button>게시판으로 이동</button></a>
 </body>
 </html>
