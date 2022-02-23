@@ -52,6 +52,7 @@ public class BoardService {
 	}
 	
 	public String getNavi() {
+		int totalPage = totalPage();
 		return "";
 	}
 }
