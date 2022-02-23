@@ -21,7 +21,9 @@ public class BoardController {
 	public String boardList(int cpage, Model model) {
 		int currentPage = bService.pageDefender(cpage);
 		List<boardDTO> list = bService.getList(currentPage);
+		String navi = bService.getNavi(currentPage);
 		model.addAttribute("list", list);
+		model.addAttribute("navi", navi);
 		return "board/list";
 	}
 }

@@ -46,9 +46,9 @@
         <li>${list.view_count}</li>
         <li>${list.write_date}</li>
       </ul>
-    </div></a>
+    </div></a><br>
     </c:forEach>
-    <div class="naviGround"></div>
+    <div class="naviGround">${navi}</div>
   </div>
 </body>
 </html>
