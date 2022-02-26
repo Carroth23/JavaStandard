@@ -1,5 +1,7 @@
 package com.toy.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.toy.dto.BoardDTO;
 import com.toy.service.BoardService;
 
 @Controller
@@ -18,7 +21,9 @@ public class BoardController {
 	
 	@RequestMapping("list")
 	public String list(Model model) {
-		model.addAttribute("list", boardService.selectAll());
+		List<BoardDTO> list = boardService.selectAll();
+		System.out.println(list.size());
+		model.addAttribute("list", list);
 		return "/board/list";
 	}
 	

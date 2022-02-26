@@ -27,8 +27,8 @@ public class MemberController {
 	
 	@RequestMapping("login")
 	public String login(String id, String pw) {
-		memberService.login(id, pw);
 		session.setAttribute("id", id);
-		return "/board/list";
+		memberService.login(id, pw);
+		return "redirect:/board/list";
 	}
 }

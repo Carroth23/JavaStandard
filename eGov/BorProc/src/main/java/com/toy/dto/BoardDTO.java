@@ -7,20 +7,29 @@ public class BoardDTO {
 	private String title;
 	private String contents;
 	private String category;
+	private String writer;
 	private int view_count;
 	private Date date;
-	public BoardDTO(int bor_seq, String title, String contents, String category, int view_count, Date date) {
+	public BoardDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public BoardDTO(int bor_seq, String title, String contents, String category, String writer, int view_count,
+			Date date) {
 		super();
 		this.bor_seq = bor_seq;
 		this.title = title;
 		this.contents = contents;
 		this.category = category;
+		this.writer = writer;
 		this.view_count = view_count;
 		this.date = date;
 	}
-	public BoardDTO() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	public int getBor_seq() {
 		return bor_seq;

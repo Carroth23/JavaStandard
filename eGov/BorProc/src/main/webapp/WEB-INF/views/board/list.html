@@ -58,7 +58,7 @@
         <div class="board">
           <div class="boardHead">
             <ul class="boardHeadIn">
-              <li>글번호</li>
+              <li>카테고리</li>
               <li>제목</li>
               <li>작성자</li>
               <li>조회수</li>
@@ -68,11 +68,11 @@
           <c:forEach var="list" items="${list}">
           <div class="boardCon">
             <ul class="boardHeadIn">
-              <li>글번호</li>
-              <li><a href="">제목</a></li>
-              <li>작성자</li>
-              <li>조회수</li>
-              <li>날짜</li>
+              <li>${list.category}</li>
+              <li><a href="">${list.title}</a></li>
+              <li>${list.writer}</li>
+              <li>${list.view_count}</li>
+              <li>${list.date}</li>
             </ul>
           </div>
         </c:forEach>
