@@ -76,7 +76,7 @@
             </ul>
           </div>
         </c:forEach>
-          <div class="page"></div>
+          <div class="page">${navi}</div>
         </div>
       </div>
     </body>

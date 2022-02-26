@@ -47,5 +47,17 @@ public class BoardService {
 		return boardDao.defaultList(start, end);
 	}
 	
-
+	public String navi(int currentPage) {
+		int start = (currentPage - 1) / Statics.PAGE_FOR_NAVI * Statics.PAGE_FOR_NAVI + 1;
+		int end = start + (Statics.PAGE_FOR_NAVI - 1);
+		if (end > totalPage()) {
+			end = totalPage();
+		}
+		System.out.println(totalPage());
+		String navi = "";
+		for(int i = start; i <= end; i++) {
+			navi += "<a href='/board/list?cpage=" + i + "'>" + i + "</a>";
+		}
+		return navi;
+	}
 }

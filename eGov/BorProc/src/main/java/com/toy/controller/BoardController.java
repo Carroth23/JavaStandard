@@ -23,6 +23,8 @@ public class BoardController {
 	public String list(Model model, Integer cpage) {
 		int currentPage = boardService.pageDepender(cpage);
 		List<BoardDTO> list = boardService.defaultList(currentPage);
+		String navi = boardService.navi(currentPage);
+		model.addAttribute("navi", navi);
 		model.addAttribute("list", list);
 		return "/board/list";
 	}
