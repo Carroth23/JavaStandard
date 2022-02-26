@@ -4,7 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Board">
-	<select id="selectAll" resultType="com.toy.dto.BoardDTO">
-		select * from board
+	<select id="totalRow" resultType="int">
+		select count(*) from board
+	</select>
+
+	<select id="defaultList" resultType="com.toy.dto.BoardDTO">
+		SELECT *
+		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn from
+		board)
+		WHERE rn between ${start} and ${end}
 	</select>
 </mapper>

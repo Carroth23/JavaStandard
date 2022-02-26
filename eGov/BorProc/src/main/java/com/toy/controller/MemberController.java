@@ -29,6 +29,6 @@ public class MemberController {
 	public String login(String id, String pw) {
 		session.setAttribute("id", id);
 		memberService.login(id, pw);
-		return "redirect:/board/list";
+		return "redirect:/board/list?cpage=1";
 	}
 }

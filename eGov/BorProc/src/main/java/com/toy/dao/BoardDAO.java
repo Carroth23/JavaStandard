@@ -1,6 +1,8 @@
 package com.toy.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,14 @@ public class BoardDAO {
 	@Autowired
 	SqlSessionTemplate mybatis;
 	
-	public List<BoardDTO> selectAll() {
-		return mybatis.selectList("Board.selectAll");
+	public int totalRow() {
+		return mybatis.selectOne("Board.totalRow");
+	}
+	
+	public List<BoardDTO> defaultList(int start, int end){
+		Map<String, String> map = new HashMap<>();
+		map.put("start", String.valueOf(start));
+		map.put("end", String.valueOf(end));
+		return mybatis.selectList("Board.defaultList", map);
 	}
 }

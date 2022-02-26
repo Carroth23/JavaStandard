@@ -20,9 +20,9 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("list")
-	public String list(Model model) {
-		List<BoardDTO> list = boardService.selectAll();
-		System.out.println(list.size());
+	public String list(Model model, Integer cpage) {
+		int currentPage = boardService.pageDepender(cpage);
+		List<BoardDTO> list = boardService.defaultList(currentPage);
 		model.addAttribute("list", list);
 		return "/board/list";
 	}
