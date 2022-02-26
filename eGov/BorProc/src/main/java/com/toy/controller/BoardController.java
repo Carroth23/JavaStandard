@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.toy.dto.BoardDTO;
+import com.toy.dto.NaviDTO;
 import com.toy.service.BoardService;
 
 @Controller
@@ -30,7 +31,7 @@ public class BoardController {
 		System.out.println("category : " + category);
 		System.out.println("searchTxt : " + searchTxt);
 		List<BoardDTO> list = boardService.boardList(currentPage, category, searchTxt);
-		String navi = boardService.navi(currentPage);
+		NaviDTO navi = boardService.navi(currentPage, category, searchTxt);
 		model.addAttribute("navi", navi);
 		model.addAttribute("list", list);
 		return "/board/list";

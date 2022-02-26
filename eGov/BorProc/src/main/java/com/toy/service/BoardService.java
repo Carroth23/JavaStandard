@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.toy.dao.BoardDAO;
 import com.toy.dto.BoardDTO;
+import com.toy.dto.NaviDTO;
 import com.toy.statics.Statics;
 
 @Service
@@ -51,22 +52,22 @@ public class BoardService {
 			return boardDao.defaultList(start, end);
 		} else {
 			if(category.equals("선택")) {
-				System.out.println("선택 검색함 검색어 : " + searchTxt);
 				return boardDao.searchList(start, end, searchTxt);
 			}
 			return boardDao.searchList(start, end, category, searchTxt);
 		}
 	}
 	
-	public String navi(int currentPage) {
-		int start = (currentPage - 1) / Statics.PAGE_FOR_NAVI * Statics.PAGE_FOR_NAVI + 1;
-		int end = start + (Statics.PAGE_FOR_NAVI - 1);
-		if (end > totalPage()) {
-			end = totalPage();
-		}
-		String navi = "";
-		for(int i = start; i <= end; i++) {
-			navi += "<a href='/board/list?cpage=" + i + "'>" + i + "</a>";
+	public NaviDTO navi(int currentPage, String category, String searchTxt) {
+		NaviDTO navi = new NaviDTO();
+		if(category == null && searchTxt == null) {
+			int start = (currentPage - 1) / Statics.PAGE_FOR_NAVI * Statics.PAGE_FOR_NAVI + 1;
+			int end = start + (Statics.PAGE_FOR_NAVI - 1);
+			if (end > totalPage()) {
+				end = totalPage();
+			}
+			navi.setStart(start);
+			navi.setEnd(end);
 		}
 		return navi;
 	}

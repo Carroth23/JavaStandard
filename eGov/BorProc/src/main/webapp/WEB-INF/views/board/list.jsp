@@ -76,7 +76,11 @@
             </ul>
           </div>
         </c:forEach>
-          <div class="page">${navi}</div>
+          <div class="page">
+            <c:forEach begin="${navi.start}" end="${navi.end}" var="n">
+                <a href="/board/list?cpage=${n}">${n}</a>
+            </c:forEach>
+          </div>
         </div>
       </div>
     </body>

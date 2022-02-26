@@ -1,16 +1,16 @@
 package com.toy.dto;
 
-public class PageDTO {
+public class NaviDTO {
 	private int cpage;
 	private int start;
 	private int end;
 	private String category;
 	private String searchTxt;
-	public PageDTO() {
+	public NaviDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public PageDTO(int cpage, int start, int end, String category, String searchTxt) {
+	public NaviDTO(int cpage, int start, int end, String category, String searchTxt) {
 		super();
 		this.cpage = cpage;
 		this.start = start;
