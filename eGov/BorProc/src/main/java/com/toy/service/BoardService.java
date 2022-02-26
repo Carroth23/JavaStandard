@@ -30,21 +30,32 @@ public class BoardService {
 		return totalPage;
 	}
 	
-	public int pageDepender(Integer cpage) {
-		if(cpage == null || cpage < 1) {
-			cpage = 1;
+	public int pageDepender(String cpage) {
+		if(cpage == null || cpage == "") {
+			cpage = "1";
 		}
-		if(cpage > totalPage()) {
-			cpage = totalPage();
+		int currentPage = Integer.parseInt(cpage);
+		if(currentPage < 1) {
+			currentPage = 1;
 		}
-		int currentPage = cpage.intValue();
+		if(currentPage > totalPage()) {
+			currentPage = totalPage();
+		}
 		return currentPage;
 	}
 	
-	public List<BoardDTO> defaultList(int currentPage){
+	public List<BoardDTO> boardList(int currentPage, String category, String searchTxt){
 		int start = currentPage * Statics.PAGE_FOR_ROW - (Statics.PAGE_FOR_ROW - 1);
 		int end = start + (Statics.PAGE_FOR_ROW - 1);
-		return boardDao.defaultList(start, end);
+		if(category == null && searchTxt == null) {
+			return boardDao.defaultList(start, end);
+		} else {
+			if(category.equals("선택")) {
+				System.out.println("선택 검색함 검색어 : " + searchTxt);
+				return boardDao.searchList(start, end, searchTxt);
+			}
+			return boardDao.searchList(start, end, category, searchTxt);
+		}
 	}
 	
 	public String navi(int currentPage) {
@@ -53,7 +64,6 @@ public class BoardService {
 		if (end > totalPage()) {
 			end = totalPage();
 		}
-		System.out.println(totalPage());
 		String navi = "";
 		for(int i = start; i <= end; i++) {
 			navi += "<a href='/board/list?cpage=" + i + "'>" + i + "</a>";

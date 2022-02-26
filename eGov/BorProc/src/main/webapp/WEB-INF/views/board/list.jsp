@@ -45,9 +45,9 @@
     <body>
       <div class="container">
         <div class="header">
-          <form action="/board/search" method="get">
+          <form action="/board/list" method="get">
             <select name="category">
-              <option value="">선택</option>
+              <option value="선택">선택</option>
               <option value="자유">자유</option>
               <option value="게임">게임</option>
               <option value="여행">여행</option>

@@ -20,20 +20,19 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("list")
-	public String list(Model model, Integer cpage) {
+	public String list(Model model, HttpServletRequest request) {
+		String cpage = request.getParameter("cpage");
+		String category = request.getParameter("category");
+		String searchTxt = request.getParameter("searchTxt");
 		int currentPage = boardService.pageDepender(cpage);
-		List<BoardDTO> list = boardService.defaultList(currentPage);
+		System.out.println("cpage : " + cpage);
+		System.out.println("currentPage : " + currentPage);
+		System.out.println("category : " + category);
+		System.out.println("searchTxt : " + searchTxt);
+		List<BoardDTO> list = boardService.boardList(currentPage, category, searchTxt);
 		String navi = boardService.navi(currentPage);
 		model.addAttribute("navi", navi);
 		model.addAttribute("list", list);
-		return "/board/list";
-	}
-	
-	@RequestMapping("search")
-	public String search(HttpServletRequest request) {
-		String category = request.getParameter("category");
-		String searchTxt = request.getParameter("searchTxt");
-		System.out.println("선택 카테고리 : " + category + ", 검색어 : " + searchTxt);
 		return "/board/list";
 	}
 	

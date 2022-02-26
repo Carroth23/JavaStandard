@@ -10,8 +10,23 @@
 
 	<select id="defaultList" resultType="com.toy.dto.BoardDTO">
 		SELECT *
-		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn from
+		FROM (SELECT
+		board.*, ROW_NUMBER() over(order by seq desc)AS rn from
 		board)
+		WHERE rn
+		between ${start} and ${end}
+	</select>
+
+	<select id="searchList" resultType="com.toy.dto.BoardDTO">
+		SELECT *
+		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn from board
+		WHERE category = #{category} and title like '%'||#{searchTxt}||'%')
+		WHERE rn between ${start} and ${end}
+	</select>
+	
+	<select id="searchListNoCategory" resultType="com.toy.dto.BoardDTO">
+		SELECT *
+		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn FROM board WHERE title like '%'||#{searchTxt}||'%')
 		WHERE rn between ${start} and ${end}
 	</select>
 </mapper>
