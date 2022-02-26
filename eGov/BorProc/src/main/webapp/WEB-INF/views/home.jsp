@@ -36,7 +36,7 @@
           로그인화면입니다.
         </div>
         <div class="contents">
-          <form action="controller/member/login" method="post">
+          <form action="/member/login" method="post">
             <input type="text" placeholder="ID입력" name="id"><br>
             <input type="password" placeholder="PW입력" name="pw"><br>
             <button>로그인</button>
@@ -48,7 +48,7 @@
         <div class="modalIn">
           <div class="modalHeader">회원가입</div>
           <div class="modalContents">
-            <form action="controller/member/signup" method="post">
+            <form action="/member/signup" method="post">
               <input type="text" placeholder="이름" name="name"><br>
               <input type="text" placeholder="아이디" name="id"><br>
               <input type="password" placeholder="비밀번호" name="pw">

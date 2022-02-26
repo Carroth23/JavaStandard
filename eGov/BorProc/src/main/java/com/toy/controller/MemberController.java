@@ -10,7 +10,7 @@ import com.toy.dto.MemberDTO;
 import com.toy.service.MemberService;
 
 @Controller
-@RequestMapping("/controller/member/")
+@RequestMapping("/member/")
 public class MemberController {
 	
 	@Autowired
