@@ -17,7 +17,6 @@ public class BoardService {
 	BoardDAO boardDao;
 
 	public int totalRow(String category, String searchPage) {
-		System.out.println("총 게시물 수 : " + boardDao.totalRow(category, searchPage));
 		return boardDao.totalRow(category, searchPage);
 	}
 
