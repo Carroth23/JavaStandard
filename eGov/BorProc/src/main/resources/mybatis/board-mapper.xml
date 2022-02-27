@@ -35,4 +35,12 @@
 	<insert id="write">
 		insert into board values(bor_seq.nextval, #{title}, #{contents}, #{writer}, #{category}, default, default)
 	</insert>
+	
+	<select id="detail" resultType="com.toy.dto.BoardDTO">
+		select * from board where seq = ${value}
+	</select>
+	
+	<update id="view_countUp">
+		update board set view_count = view_count + 1 where seq = ${value}
+	</update>
 </mapper>

@@ -56,4 +56,13 @@ public class BoardDAO {
 		map.put("writer", writer);
 		return mybatis.insert("Board.write", map);
 	}
+	
+	// 상세페이지
+	public BoardDTO detail(int bor_seq) {
+		return mybatis.selectOne("Board.detail", bor_seq);
+	}
+	
+	public int view_countUp(int bor_seq) {
+		return mybatis.update("Board.view_countUp", bor_seq);
+	}
 }

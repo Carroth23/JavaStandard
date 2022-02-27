@@ -94,4 +94,10 @@ public class BoardService {
 	public int write(String title, String contents, String category, String writer) {
 		return boardDao.write(title, contents, category, writer);
 	}
+	
+	// 글 상세페이지
+	public BoardDTO detail(int bor_seq) {
+		boardDao.view_countUp(bor_seq); // 조회수 증가(메서드 따로 뺄까 고민중)
+		return boardDao.detail(bor_seq);
+	}
 }

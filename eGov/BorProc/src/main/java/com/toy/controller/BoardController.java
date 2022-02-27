@@ -54,4 +54,10 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
+	@RequestMapping("detail")
+	public String detail(int bor_seq, Model model) {
+		model.addAttribute("detail", boardService.detail(bor_seq));
+		return "/board/detail";
+	}
+	
 }

@@ -74,10 +74,10 @@
             <div class="boardCon">
               <ul class="boardHeadIn">
                 <li>${list.category}</li>
-                <li><a href="">${list.title}</a></li>
+                <li><a href="/board/detail?bor_seq=${list.seq}">${list.title}</a></li>
                 <li>${list.writer}</li>
                 <li>${list.view_count}</li>
-                <li>${list.date}</li>
+                <li>${list.write_date}</li>
               </ul>
             </div>
           </c:forEach>
