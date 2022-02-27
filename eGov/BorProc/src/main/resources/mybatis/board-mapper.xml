@@ -7,33 +7,30 @@
 	<select id="totalRow" resultType="int">
 		SELECT count(*)
 		FROM board
-		WHERE title like '%'||#{searchTxt}||'%'<if test="!category.equals('선택')"> and category = #{category}</if>
+		WHERE title like concat('%',#{searchTxt},'%')<if test="!category.equals('선택')"> and category = #{category}</if>
 	</select>
 
 	<select id="defaultList" resultType="com.toy.dto.BoardDTO">
-		SELECT *
-		FROM (SELECT
-		board.*, ROW_NUMBER() over(order by seq desc)AS rn from
-		board)
-		WHERE rn
-		between ${start} and ${end}
+		SELECT * FROM board order by seq desc limit ${start}, ${end}
 	</select>
 
 	<select id="searchList" resultType="com.toy.dto.BoardDTO">
 		SELECT *
-		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn from board
-		WHERE category = #{category} and title like '%'||#{searchTxt}||'%')
-		WHERE rn between ${start} and ${end}
+		FROM board
+		WHERE category = #{category} and title like concat('%',#{searchTxt},'%')
+		order by seq desc
+		limit ${start}, ${end}
 	</select>
 	
 	<select id="searchListNoCategory" resultType="com.toy.dto.BoardDTO">
 		SELECT *
-		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn FROM board WHERE title like '%'||#{searchTxt}||'%')
-		WHERE rn between ${start} and ${end}
+		FROM board WHERE title like concat('%',#{searchTxt},'%')
+		order by seq desc
+		limit ${start}, ${end}
 	</select>
 	
 	<insert id="write">
-		insert into board values(bor_seq.nextval, #{title}, #{contents}, #{writer}, #{category}, default, default)
+		insert into board values(default, #{title}, #{contents}, #{writer}, #{category}, default, default)
 	</insert>
 	
 	<select id="detail" resultType="com.toy.dto.BoardDTO">
