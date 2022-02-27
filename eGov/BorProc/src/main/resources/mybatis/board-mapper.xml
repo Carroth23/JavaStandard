@@ -5,7 +5,9 @@
 
 <mapper namespace="Board">
 	<select id="totalRow" resultType="int">
-		select count(*) from board
+		SELECT count(*)
+		FROM board
+		WHERE title like '%'||#{searchTxt}||'%'<if test="!category.equals('선택')"> and category = #{category}</if>
 	</select>
 
 	<select id="defaultList" resultType="com.toy.dto.BoardDTO">

@@ -23,13 +23,14 @@ public class BoardController {
 	@RequestMapping("list")
 	public String list(Model model, HttpServletRequest request) {
 		String cpage = request.getParameter("cpage");
-		String category = request.getParameter("category");
-		String searchTxt = request.getParameter("searchTxt");
-		int currentPage = boardService.pageDepender(cpage);
-		System.out.println("cpage : " + cpage);
-		System.out.println("currentPage : " + currentPage);
-		System.out.println("category : " + category);
-		System.out.println("searchTxt : " + searchTxt);
+		System.out.println("변환 전 카테고리 : " + request.getParameter("category"));
+		System.out.println("변환 전 검색어 : " + request.getParameter("searchTxt"));
+		String category = boardService.categoryDepender(request.getParameter("category"));
+		String searchTxt = boardService.searchDepender(request.getParameter("searchTxt"));
+		System.out.println("변환 후 카테고리 : " + category);
+		System.out.println("변환 후 검색어 : " + searchTxt);
+		
+		int currentPage = boardService.pageDepender(cpage, category, searchTxt);
 		List<BoardDTO> list = boardService.boardList(currentPage, category, searchTxt);
 		NaviDTO navi = boardService.navi(currentPage, category, searchTxt);
 		model.addAttribute("navi", navi);

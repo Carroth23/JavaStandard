@@ -78,7 +78,7 @@
         </c:forEach>
           <div class="page">
             <c:forEach begin="${navi.start}" end="${navi.end}" var="n">
-                <a href="/board/list?cpage=${n}">${n}</a>
+                <a href="/board/list?cpage=${n}&category=${navi.category}&searchTxt=${navi.searchTxt}">${n}</a>
             </c:forEach>
           </div>
         </div>

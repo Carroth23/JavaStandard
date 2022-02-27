@@ -16,8 +16,11 @@ public class BoardDAO {
 	@Autowired
 	SqlSessionTemplate mybatis;
 	
-	public int totalRow() {
-		return mybatis.selectOne("Board.totalRow");
+	public int totalRow(String category, String searchPage) {
+		Map<String, String> map = new HashMap<>();
+		map.put("category", category);
+		map.put("searchTxt", searchPage);
+		return mybatis.selectOne("Board.totalRow", map);
 	}
 	
 	public List<BoardDTO> defaultList(int start, int end){

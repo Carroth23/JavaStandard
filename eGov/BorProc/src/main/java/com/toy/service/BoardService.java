@@ -15,60 +15,78 @@ public class BoardService {
 
 	@Autowired
 	BoardDAO boardDao;
-	
-	public int totalRow() {
-		return boardDao.totalRow();
+
+	public int totalRow(String category, String searchPage) {
+		System.out.println("총 게시물 수 : " + boardDao.totalRow(category, searchPage));
+		return boardDao.totalRow(category, searchPage);
 	}
-	
-	public int totalPage() {
-		int totalRow = totalRow();
+
+	public int totalPage(String category, String searchPage) {
+		int totalRow = totalRow(category, searchPage);
 		int totalPage = 0;
-		if(totalRow % Statics.PAGE_FOR_ROW == 0) {
+		if (totalRow % Statics.PAGE_FOR_ROW == 0) {
 			totalPage = totalRow / Statics.PAGE_FOR_ROW;
 		} else {
 			totalPage = totalRow / Statics.PAGE_FOR_ROW + 1;
 		}
 		return totalPage;
 	}
-	
-	public int pageDepender(String cpage) {
-		if(cpage == null || cpage == "") {
+
+	public String searchDepender(String searchTxt) {
+		if (searchTxt == null) {
+			searchTxt = "";
+		}
+		return searchTxt;
+	}
+
+	public String categoryDepender(String category) {
+		if (category == null) {
+			category = "선택";
+		}
+		if (category.equals("")) {
+			category = "선택";
+		}
+		return category;
+	}
+
+	public int pageDepender(String cpage, String category, String searchTxt) {
+		if (cpage == null || cpage == "") {
 			cpage = "1";
 		}
 		int currentPage = Integer.parseInt(cpage);
-		if(currentPage < 1) {
+		if (currentPage < 1) {
 			currentPage = 1;
 		}
-		if(currentPage > totalPage()) {
-			currentPage = totalPage();
+		if (currentPage > totalPage(category, searchTxt)) {
+			currentPage = totalPage(category, searchTxt);
 		}
 		return currentPage;
 	}
-	
-	public List<BoardDTO> boardList(int currentPage, String category, String searchTxt){
+
+	public List<BoardDTO> boardList(int currentPage, String category, String searchTxt) {
 		int start = currentPage * Statics.PAGE_FOR_ROW - (Statics.PAGE_FOR_ROW - 1);
 		int end = start + (Statics.PAGE_FOR_ROW - 1);
-		if(category == null && searchTxt == null) {
+		if (category == null && searchTxt == null || category.equals("") && searchTxt.equals("")) {
 			return boardDao.defaultList(start, end);
 		} else {
-			if(category.equals("선택")) {
+			if (category.equals("선택")) {
 				return boardDao.searchList(start, end, searchTxt);
 			}
 			return boardDao.searchList(start, end, category, searchTxt);
 		}
 	}
-	
+
 	public NaviDTO navi(int currentPage, String category, String searchTxt) {
 		NaviDTO navi = new NaviDTO();
-		if(category == null && searchTxt == null) {
-			int start = (currentPage - 1) / Statics.PAGE_FOR_NAVI * Statics.PAGE_FOR_NAVI + 1;
-			int end = start + (Statics.PAGE_FOR_NAVI - 1);
-			if (end > totalPage()) {
-				end = totalPage();
-			}
-			navi.setStart(start);
-			navi.setEnd(end);
+		int start = (currentPage - 1) / Statics.PAGE_FOR_NAVI * Statics.PAGE_FOR_NAVI + 1;
+		int end = start + (Statics.PAGE_FOR_NAVI - 1);
+		if (end > totalPage(category, searchTxt)) {
+			end = totalPage(category, searchTxt);
 		}
+		navi.setStart(start);
+		navi.setEnd(end);
+		navi.setCategory(category);
+		navi.setSearchTxt(searchTxt);
 		return navi;
 	}
 }
