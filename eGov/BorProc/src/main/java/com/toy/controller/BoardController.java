@@ -3,6 +3,7 @@ package com.toy.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
+	@Autowired
+	HttpSession session;
+	
 	@RequestMapping("list")
 	public String list(Model model, HttpServletRequest request) {
 		String cpage = request.getParameter("cpage");
@@ -36,6 +40,18 @@ public class BoardController {
 		model.addAttribute("navi", navi);
 		model.addAttribute("list", list);
 		return "/board/list";
+	}
+	
+	@RequestMapping("writeGo")
+	public String writeGo() {
+		return "/board/write";
+	}
+	
+	@RequestMapping("write")
+	public String write(String category, String title, String contents) {
+		String writer = (String) session.getAttribute("id");
+		boardService.write(title, contents, category, writer);
+		return "redirect:/board/list";
 	}
 	
 }

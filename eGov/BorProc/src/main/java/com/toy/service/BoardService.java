@@ -89,4 +89,9 @@ public class BoardService {
 		navi.setSearchTxt(searchTxt);
 		return navi;
 	}
+	
+	// 글쓰기
+	public int write(String title, String contents, String category, String writer) {
+		return boardDao.write(title, contents, category, writer);
+	}
 }

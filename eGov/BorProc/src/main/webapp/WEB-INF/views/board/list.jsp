@@ -29,15 +29,20 @@
         }
 
         .boardHead {
-          width:100%;
-          height:50px;
-          border:1px solid gray;
+          width: 100%;
+          height: 50px;
+          border: 1px solid gray;
         }
-        .boardCon{
-          border-bottom:1px solid gray;
-          width:90%;
-          margin:auto;
-          height:25px;
+
+        .boardCon {
+          border-bottom: 1px solid gray;
+          width: 90%;
+          margin: auto;
+          height: 25px;
+        }
+        .writeBtn{
+          width:100%;
+          text-align: right;
         }
       </style>
     </head>
@@ -66,23 +71,31 @@
             </ul>
           </div>
           <c:forEach var="list" items="${list}">
-          <div class="boardCon">
-            <ul class="boardHeadIn">
-              <li>${list.category}</li>
-              <li><a href="">${list.title}</a></li>
-              <li>${list.writer}</li>
-              <li>${list.view_count}</li>
-              <li>${list.date}</li>
-            </ul>
-          </div>
-        </c:forEach>
+            <div class="boardCon">
+              <ul class="boardHeadIn">
+                <li>${list.category}</li>
+                <li><a href="">${list.title}</a></li>
+                <li>${list.writer}</li>
+                <li>${list.view_count}</li>
+                <li>${list.date}</li>
+              </ul>
+            </div>
+          </c:forEach>
           <div class="page">
             <c:forEach begin="${navi.start}" end="${navi.end}" var="n">
-                <a href="/board/list?cpage=${n}&category=${navi.category}&searchTxt=${navi.searchTxt}">${n}</a>
+              <a href="/board/list?cpage=${n}&category=${navi.category}&searchTxt=${navi.searchTxt}">${n}</a>
             </c:forEach>
+          </div>
+          <div class="writeBtn">
+            <button id="writeBtn">글쓰기</button>
           </div>
         </div>
       </div>
+      <script>
+        $("#writeBtn").on("click", () => {
+          location.href="/board/writeGo";
+        })
+      </script>
     </body>
 
     </html>

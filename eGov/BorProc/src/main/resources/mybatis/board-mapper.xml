@@ -31,4 +31,8 @@
 		FROM (SELECT board.*, ROW_NUMBER() over(order by seq desc)AS rn FROM board WHERE title like '%'||#{searchTxt}||'%')
 		WHERE rn between ${start} and ${end}
 	</select>
+	
+	<insert id="write">
+		insert into board values(bor_seq.nextval, #{title}, #{contents}, #{writer}, #{category}, default, default)
+	</insert>
 </mapper>

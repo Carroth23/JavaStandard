@@ -46,4 +46,14 @@ public class BoardDAO {
 		map.put("searchTxt", searchTxt);
 		return mybatis.selectList("Board.searchListNoCategory", map);
 	}
+	
+	// 글쓰기
+	public int write(String title, String contents, String category, String writer) {
+		Map<String, String> map = new HashMap<>();
+		map.put("title", title);
+		map.put("contents", contents);
+		map.put("category", category);
+		map.put("writer", writer);
+		return mybatis.insert("Board.write", map);
+	}
 }
