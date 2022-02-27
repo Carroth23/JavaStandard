@@ -43,4 +43,8 @@
 	<update id="view_countUp">
 		update board set view_count = view_count + 1 where seq = ${value}
 	</update>
+	
+	<delete id="delete">
+		delete from board where seq = ${value}
+	</delete>
 </mapper>

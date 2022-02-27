@@ -41,9 +41,18 @@
           <textarea rows="20" cols="80" name="contents" readonly>${detail.contents}</textarea>
         </div>
         <div class="boardBottom">
+        <c:if test="${id == detail.writer}">
+          <button id="updateBtn">수정하기</button>
+          <button id="deleteBtn">삭제하기</button>
+        </c:if>
           <button>목록으로</button>
         </div>
       </div>
+      <script>
+        $("#deleteBtn").on("click", () => {
+          location.href="/board/delete?seq=${detail.seq}";
+        })
+      </script>
     </body>
 
     </html>

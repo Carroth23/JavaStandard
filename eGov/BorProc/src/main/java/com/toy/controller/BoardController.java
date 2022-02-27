@@ -60,4 +60,10 @@ public class BoardController {
 		return "/board/detail";
 	}
 	
+	@RequestMapping("delete")
+	public String delete(int seq) {
+		boardService.delete(seq);
+		return "redirect:/board/list";
+	}
+	
 }

@@ -65,4 +65,9 @@ public class BoardDAO {
 	public int view_countUp(int bor_seq) {
 		return mybatis.update("Board.view_countUp", bor_seq);
 	}
+	
+	// 글 삭제
+	public int delete(int seq) {
+		return mybatis.delete("Board.delete", seq);
+	}
 }
