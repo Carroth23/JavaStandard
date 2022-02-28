@@ -5,4 +5,8 @@
   
 <mapper namespace="Board">
 	
+	<select id="totalRow" resultType="int">
+		select count(*) from board where title like concat('%',#{search},'%')<if test="!category.equals('선택')"> and category = #{category}</if>
+	</select>
+	
 </mapper>

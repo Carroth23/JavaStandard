@@ -20,8 +20,7 @@ public class BoardController {
 	public String list(HttpServletRequest request, Model model) {
 		String category = boardService.categoryDepender(request.getParameter("category"));
 		String search = boardService.searchDepender(request.getParameter("search"));
-		request.getParameter("cpage");
-		int currentPage = 
+		int currentPage = boardService.pageDepender(category, search, request.getParameter("cpage"));
 		return "/board/list";
 	}
 }
