@@ -1,9 +1,12 @@
 package com.toy.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.toy.dao.BoardDAO;
+import com.toy.dto.BoardDTO;
 import com.toy.statics.Statics;
 
 @Service
@@ -60,5 +63,12 @@ public class BoardService {
 			currentPage = 1;
 		}
 		return currentPage;
+	}
+	
+	public List<BoardDTO> getBoardList(int currentPage, String category, String search){
+		System.out.println("연산되는 currentPage = " + currentPage);
+		int getRow = Statics.PAGE_PER_ROW;
+		int whereRow = (currentPage - 1) * Statics.PAGE_PER_ROW;
+		return boardDao.getBoardList(getRow, whereRow, category, search);
 	}
 }

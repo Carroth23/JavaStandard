@@ -9,4 +9,12 @@
 		select count(*) from board where title like concat('%',#{search},'%')<if test="!category.equals('선택')"> and category = #{category}</if>
 	</select>
 	
+	<select id="getBoardList" resultType="com.toy.dto.BoardDTO">
+		SELECT *
+		FROM board
+		WHERE title 
+		LIKE concat('%',#{search},'%')<if test="!category.equals('선택')"> and category = #{category} </if>
+		limit ${getRow} offset ${whereRow}
+	</select>
+	
 </mapper>

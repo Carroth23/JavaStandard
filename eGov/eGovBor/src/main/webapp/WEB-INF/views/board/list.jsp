@@ -40,8 +40,9 @@
           margin: auto;
           height: 25px;
         }
-        .writeBtn{
-          width:100%;
+
+        .writeBtn {
+          width: 100%;
           text-align: right;
         }
       </style>
@@ -63,13 +64,24 @@
         <div class="board">
           <div class="boardHead">
             <ul class="boardHeadIn">
+              <li>번호</li>
               <li>카테고리</li>
               <li>제목</li>
-              <li>작성자</li>
               <li>조회수</li>
               <li>날짜</li>
             </ul>
           </div>
+          <c:forEach var="list" items="${list}">
+            <div class="boardHead">
+              <ul class="boardHeadIn">
+                <li>${list.seq}</li>
+                <li>${list.category}</li>
+                <li>${list.title}</li>
+                <li>${list.view_count}</li>
+                <li>${list.write_date}</li>
+              </ul>
+            </div>
+          </c:forEach>
           <div class="page">
 
           </div>
@@ -80,7 +92,7 @@
       </div>
       <script>
         $("#writeBtn").on("click", () => {
-          location.href="/board/writeGo";
+          location.href = "/board/writeGo";
         });
       </script>
     </body>
