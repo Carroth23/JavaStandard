@@ -16,7 +16,7 @@
         .container {
           border: 1px solid gray;
           width: 800px;
-          height: 600px;
+          height: 640px;
         }
 
         .header {
@@ -53,7 +53,7 @@
         <div class="header">
           <form action="/board/list" method="get">
             <select name="category">
-              <option value="선택">선택</option>
+              <option value="선택">전체</option>
               <option value="자유">자유</option>
               <option value="게임">게임</option>
               <option value="여행">여행</option>
