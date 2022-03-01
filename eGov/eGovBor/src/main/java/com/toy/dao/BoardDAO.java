@@ -29,10 +29,6 @@ public class BoardDAO {
 		map.put("whereRow", String.valueOf(whereRow));
 		map.put("category", category);
 		map.put("search", search);
-		System.out.println("getRow : " + getRow);
-		System.out.println("whereRow : " + whereRow);
-		System.out.println("category : " + category);
-		System.out.println("search : " + search);
 		return mybatis.selectList("Board.getBoardList", map);
 	}
 }

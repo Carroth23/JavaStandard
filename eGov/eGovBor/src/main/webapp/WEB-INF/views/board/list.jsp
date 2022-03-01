@@ -58,7 +58,7 @@
               <option value="게임">게임</option>
               <option value="여행">여행</option>
             </select>
-            <input type="text" placeholder="검색어 입력" name="searchTxt"><button>검색</button>
+            <input type="text" placeholder="검색어 입력" name="search"><button>검색</button>
           </form>
         </div>
         <div class="board">
@@ -83,7 +83,9 @@
             </div>
           </c:forEach>
           <div class="page">
-
+            <c:forEach var="i" begin="${page.startPage}" end="${page.endPage}">
+              <a href="/board/list?cpage=${i}&category=${page.category}&search=${page.search}">${i}</a>
+            </c:forEach>
           </div>
           <div class="writeBtn">
             <button id="writeBtn">글쓰기</button>

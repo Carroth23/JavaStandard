@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.toy.dao.BoardDAO;
 import com.toy.dto.BoardDTO;
+import com.toy.dto.PageDTO;
 import com.toy.statics.Statics;
 
 @Service
@@ -66,9 +67,25 @@ public class BoardService {
 	}
 	
 	public List<BoardDTO> getBoardList(int currentPage, String category, String search){
-		System.out.println("연산되는 currentPage = " + currentPage);
 		int getRow = Statics.PAGE_PER_ROW;
 		int whereRow = (currentPage - 1) * Statics.PAGE_PER_ROW;
 		return boardDao.getBoardList(getRow, whereRow, category, search);
 	}
+	
+	public PageDTO getPage(int currentPage, String category, String search) {
+		PageDTO page = new PageDTO();
+		page.setCurrentPage(currentPage);
+		int startPage = (currentPage - 1) / Statics.NAVI_PER_PAGE * Statics.NAVI_PER_PAGE + 1;
+		int endPage = startPage + (Statics.NAVI_PER_PAGE - 1);
+		if(endPage > totalPage(category, search)) {
+			endPage = totalPage(category, search);
+		}
+		page.setStartPage(startPage);
+		page.setEndPage(endPage);
+		page.setCategory(category);
+		page.setSearch(search);
+		return page;
+	}
+	
+	
 }

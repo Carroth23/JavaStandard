@@ -14,6 +14,7 @@
 		FROM board
 		WHERE title 
 		LIKE concat('%',#{search},'%')<if test="!category.equals('선택')"> and category = #{category} </if>
+		order by seq desc
 		limit ${getRow} offset ${whereRow}
 	</select>
 	
