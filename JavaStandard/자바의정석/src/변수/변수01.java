@@ -1,4 +1,4 @@
-package 챕터02변수;
+package 변수;
 
 public class 변수01 {
 
