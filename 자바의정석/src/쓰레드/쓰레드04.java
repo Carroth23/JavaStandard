@@ -1,5 +1,7 @@
 package 쓰레드;
 
+import javax.swing.JOptionPane;
+
 public class 쓰레드04 {
 	public static void main(String[] args) {
 		/*
@@ -15,5 +17,24 @@ public class 쓰레드04 {
 		// 특정 쓰레드를 지정해서 멈추게 하는것은 불가능. t1.sleep를 해도 결국 (실행한)자기가 잔다.
 		
 		// interrupt() : 대기상태(WAITING)인 쓰레드를 실행대기(RUNNABLE)로 만든다.
+		MyThread5 th1 = new MyThread5();
+		System.out.println(th1.isInterrupted());
+		th1.start();
+		
+		String input = JOptionPane.showInputDialog("아무값 입력 ㄱ");
+		th1.interrupt();
+		System.out.println("입력하신 값은 " + input + "입니다.");
+		System.out.println(th1.isInterrupted());
+	}
+}
+
+class MyThread5 extends Thread{
+	public void run() {
+		int i = 10;
+		while(i != 0 && !isInterrupted()) { // 인터럽트가 되기 전까지
+			System.out.println(i--);
+			for(long x = 0; x < 2500000000L; x++); // 시간 지연?
+		}
+		System.out.println("카운트가 종료되었습니다.");
 	}
 }
