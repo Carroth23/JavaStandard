@@ -38,8 +38,16 @@ public class 스트림01 {
 		IntStream intStream5 = IntStream.range(1, 5); // 1, 2, 3, 4
 		IntStream intStream6 = IntStream.rangeClosed(1, 5); // 1, 2, 3, 4, 5
 		
+		// 스트림 만들기 - 람다식
+		// iterate(T seed, UnaryOperator f) 단항 연산자
+		Stream<Integer> intStream7 = Stream.iterate(0, n -> n + 2);
+		intStream7.limit(10).forEach(System.out::println);
+		// generate(Supplier s) 주기만 하는것 입력x, 출력O
+		Stream<Integer> oneStream = Stream.generate(() -> 1); // 1, 1, 1, 1, 1...
 		
-		
+		// 스트림 만들기 - 파일과 빈 스트림
+//		Stream<Path> Files.list(Path dir) Path = 하나의 파일 또는 경로
+		Stream emptyStream = Stream.empty(); // 빈스트림 생성
 	}
 
 }
