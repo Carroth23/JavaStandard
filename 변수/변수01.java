@@ -25,7 +25,7 @@ public class 변수01 {
 		double d = 12.34567;
 		System.out.printf("age : %d%n", x);
 		System.out.printf("double : %.1f%n", d);
-		System.out.printf("double : %.2f", d); // 반올림됨.
+		System.out.printf("double : %.2f", d); // 반올림됨
 		
 		// 오버플로우
 		short beforeOver = 32767;
