@@ -1,6 +1,6 @@
 package 컬렉션프레임웍;
 
-public class 컬렉션01 {
+public class 컬렉션 {
 
 	public static void main(String[] args) {
 		// 컬렉션 프레임워크 : 데이터군을 저장하는 클래스들을 표준화한 설계
