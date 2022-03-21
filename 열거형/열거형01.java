@@ -4,7 +4,7 @@ public class 열거형01 {
 	// 열거형: 관련된 상수들을 같이 묶어 놓은것.(객체임)
 	enum Direction {EAST, SOUTH, WEST, NORTH};
 	enum Direction2 {EAST, SOUTH, WEST, NORTH};
-		// 열거형 이름   o,    1,    2,     3 자동초기화
+		// 열거형 이름   o,     1,    2,     3 자동초기화
 	
 	public static void main(String[] args) {
 //		if(Direction.EAST == Direction2.EAST) 타입을 먼저체크. 컴파일 에러
