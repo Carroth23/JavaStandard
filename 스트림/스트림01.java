@@ -1,4 +1,4 @@
-package 람다와스트림;
+package 스트림;
 
 import java.util.Arrays;
 import java.util.List;

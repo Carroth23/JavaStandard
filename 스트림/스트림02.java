@@ -1,4 +1,4 @@
-package 람다와스트림;
+package 스트림;
 
 public class 스트림02 {
 	public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class 스트림02 {
 		// sorted()							스트림의 요소를 정렬
 		
 		// 중간연산의 핵심
-		// map(Function<T, R> mapper) 				스트림의 요소를 변환
+		// map(Function<T, R> mapper) 				스트림의 요소를 변환, 추출
 		// flatMap(Function<T, Stream<R>> mapper)	스트림의 요소를 변환
 		
 		// 스트림의 최종연산 - 연산 결과가 스트림이 아닌 연산. 스트림의 요소를 소모

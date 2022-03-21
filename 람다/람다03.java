@@ -1,4 +1,4 @@
-package 람다와스트림;
+package 람다;
 
 @FunctionalInterface // 함수형 인터페이스어노테이션
 interface MyFunction3{

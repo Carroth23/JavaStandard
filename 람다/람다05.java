@@ -1,4 +1,4 @@
-package 람다와스트림;
+package 람다;
 
 import java.util.ArrayList;
 import java.util.HashMap;

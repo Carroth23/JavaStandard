@@ -1,4 +1,4 @@
-package 람다와스트림;
+package 람다;
 
 public class 람다02 {
 	public static void main(String[] args) {

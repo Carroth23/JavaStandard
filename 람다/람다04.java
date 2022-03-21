@@ -1,4 +1,4 @@
-package 람다와스트림;
+package 람다;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
