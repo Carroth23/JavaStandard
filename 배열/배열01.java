@@ -9,7 +9,7 @@ public class 배열01 {
 		// 배열의 인덱스는 0 ~ 배결길이-1 까지
 		int[] arr1;					// 배열을 다룰 참조변수 선언
 		arr1 = new int[5];			// 실제 저장공간 생성
-		int[] arr2 = new int[5];	// 위에껄 한줄로
+		int[] arr2 = new int[5];	// 한줄로
 		System.out.println("arr2의 길이 : " + arr2.length + ", 인덱스 범위 : 0 ~ " + (arr2.length-1));
 		
 		// 배열의 초기화
