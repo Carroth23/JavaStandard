@@ -25,7 +25,7 @@ public class 연산자01 {
 		System.out.printf("%d / %d = %d%n", a, c, a / c);
 		System.out.printf("%d / %d = %f%n", a, c, (float)a / c);
 		
-		// Math.round
+		// Math.round()
 		float pi = 3.141592f;
 		System.out.println("소수점 셋째자리 반올림된 s : " + Math.round((pi * 1000)) / 1000.0);
 		
