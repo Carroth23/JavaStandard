@@ -26,7 +26,7 @@ class Child extends Parent{
 	
 	// 새로운 애너테이션 만들기
 	// 애너테이션 메서드는 추상메서드이다. (애너테이션을 적용할때 지정 순서X)
-	@interface TestInfo{ // @안붙이면 인터페이스됨
+	@interface TestInfo{ // @안붙이면 인터페이스되버림
 		int count();
 //		int count() default 1; 디폴트값 가능 그럼 밑에선 안적어줘도 됨
 		String testedBy();
