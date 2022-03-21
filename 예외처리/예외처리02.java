@@ -9,7 +9,7 @@ public class 예외처리02 {
 		} catch (Exception ee) {
 			System.out.println(ee.getMessage());
 			System.out.println(2);
-		} finally { // 예외에 상관없이 수행되어야 하는애들
+		} finally { // 예외에 상관없이 수행되어야 하는작업을 적는다
 			System.out.println("덤프 파일을 지웁니다.");
 		}
 		throw new RuntimeException(); // unchecked 예외
