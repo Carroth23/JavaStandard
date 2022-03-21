@@ -27,7 +27,7 @@ public class JavaLang01 {
 		System.out.println(s1 == s2);
 		System.out.println(s3 == s4);
 		String emptyStr = "";
-		char emptyChar = ' ';
+		char emptyChar = ' '; // 빈값 불가
 	}
 }
 
