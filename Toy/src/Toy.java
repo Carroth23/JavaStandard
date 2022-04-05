@@ -1,8 +1,5 @@
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -10,29 +7,37 @@ import java.util.function.Supplier;
 
 public class Toy {
     public static void main(String[] args) {
+        // Supplier는 입력 X, 출력 O
+//        Supplier<MyClass> s = () -> new MyClass();
+//        Supplier<MyClass> s = MyClass::new;
+//        Function<Integer, MyClass> s = i -> new MyClass(i);
+        Function<Integer, MyClass> s = MyClass::new;
+        Function<Integer, MyClass> s1 = i -> new MyClass(i);
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(i);
-        }
+        Function<Integer, int[]> f = i -> new int[i];
+        Function<Integer, int[]> f2 = int[]::new;
+        System.out.println(f.apply(100).length);
 
-        // list의 모든 요소 출력
-        list.forEach(i -> System.out.print(i + ","));
-        System.out.println();
+        HashMap<String, String> map = new HashMap<>();
+        int[] arr = new int[10];
+        Arrays.stream(arr);
 
-        // list에서 2 또는 3의 배수를 제거한다.
-        list.removeIf(x -> x % 2 == 0 || x % 3 ==0);
-        System.out.println(list);
 
-        list.replaceAll(i -> i * 10);
-        list.forEach(i -> System.out.print(i + ", "));
-        System.out.println();
-        Map<String, String> map = new HashMap<>();
-        map.put("1", "1");
-        map.put("2", "2");
-        map.put("3", "3");
-        map.put("4", "4");
+        MyClass mc = s.apply(123);
+        System.out.println(mc.i);
 
-        map.forEach((x, y) -> System.out.println("key = " + x + ", val = " + y));
+//        (base, exponent) -> Math.pow(base, exponent);
+//        Math::pow
     }
+}
+
+class MyClass {
+    int i;
+
+    public MyClass(int i) {
+        this.i = i;
+    }
+
+//    public MyClass() {
+//    }
 }
