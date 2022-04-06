@@ -1,44 +1,25 @@
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.io.File;
+import java.util.Locale;
+import java.util.stream.Stream;
+
 
 public class Toy {
     public static void main(String[] args) {
-        Supplier<Integer> s = () -> (int)(Math.random() * 100) + 1;
-        Consumer<Integer> c = i -> System.out.print(i + ", ");
-        Predicate<Integer> p = i -> i % 2 == 0;
-        Function<Integer, Integer> f = i -> i / 10 * 10;
+        File[] fileArr = {new File("Ex1.java"), new File("Ex1.bak"),
+        new File("Ex2.java"), new File("Ex1"), new File("Ex1.txt")};
 
-        List<Integer> list = new ArrayList<>();
-        //////////////////////////// 써야댐
-    }
+        Stream<File> fileStream = Stream.of(fileArr);
 
-    static <T> List<T> doSomething(Function<T, T> f, List<T> list) {
-        List<T> newList = new ArrayList<T>(list.size());
+        //map()으로 Stream<File>을 Stream으로 변환
+        Stream<String> stringStream = fileStream.map(f -> f.getName());
+        stringStream.forEach(System.out::println);
 
-        for (T i : list) {
-            newList.add(f.apply(i));
-        }
-        return newList;
-    }
-
-    static <T> void printEvenNum(Predicate<T> p, Consumer<T> c, List<T> list) {
-        System.out.print("[");
-        for(T i : list){
-            if(p.test(i)){
-                c.accept(i);
-            }
-        }
-        System.out.println("]");
-    }
-
-    static <T> void makeRandomList(Supplier<T> s, List<T> list) {
-        for (int i = 0; i < 10; i++) {
-            list.add(s.get());
-        }
+        fileStream = Stream.of(fileArr);
+        fileStream.map(f -> f.getName()).filter(s -> s.indexOf('.') != -1)
+                .map(s -> s.substring(s.indexOf('.') + 1))
+                .peek(s -> System.out.printf("filename=%s%n", s))
+                .map(s -> s.toUpperCase(Locale.ROOT))
+                .distinct()
+                .forEach(System.out::print);
     }
 }
