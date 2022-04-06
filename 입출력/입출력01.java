@@ -23,6 +23,7 @@ public class 입출력01 {
 		// 문자 기반 보조스트림 : BufferedReader, FilterReader..
 		
 		// 표준 입출력 : 콘솔을통한 데이터 입력과 콘솔로의 데이터 출력
+		// System.in, System.out, System.err
 		
 	}
 
