@@ -15,11 +15,14 @@ public class 입출력01 {
 		// 보조 스트림 : 기본스트림의 성능을 향상시키거나 기능을 추가할 수 있다.
 		FileInputStream fis = new FileInputStream("test.txt"); // 기반 스트림 생성
 		BufferedInputStream bis = new BufferedInputStream(fis); // 기반스트림을 이용, 보조스트림 생성
+		// 보조스트림이 입력기능을 수행하는것이 아닌, 버퍼만 제공해 줌.
 		bis.read(); // 데이터 읽기
 		
-		// 문자 기반 스트림 : Reader, Writer
+		// 문자 기반 스트림 : StringReader, FileWriter..
 		// FileReader, FileWriter, CharArrayReader... 바이트기반에서 이름만 Reader로 바꾸면 됨
-		// 문자 기반 보조스트림 : BufferedReader, FilterReader...
+		// 문자 기반 보조스트림 : BufferedReader, FilterReader..
+		
+		// 표준 입출력 : 콘솔을통한 데이터 입력과 콘솔로의 데이터 출력
 		
 	}
 
