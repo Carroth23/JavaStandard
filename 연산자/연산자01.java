@@ -16,7 +16,7 @@ public class 연산자01 {
 		int score = (int) d;
 		System.out.println("형변환된 score : " + score + " , d : " + d);
 		
-		byte b = (byte)1000; // 형변환 필수
+		byte b = (byte)1000; // 형변환 명시 필수
 		System.out.println("값손실된 b : " + b);
 		
 		// 자동 형변환
@@ -24,6 +24,14 @@ public class 연산자01 {
 		int c = 4;
 		System.out.printf("%d / %d = %d%n", a, c, a / c);
 		System.out.printf("%d / %d = %f%n", a, c, (float)a / c);
+		
+		// 산술변환
+		// 이항 연산자는 두 피연산자의 타입이 일치해야 하므로 형변환 연산자로 타입을 일치시킨 후 연산.
+		// long + int -> long + long = long
+		// float + in -> float + float = float
+		// 피연산자의 타입이 int보다 작은 타입이면 int로 변환
+		// byte + short -> int + int = int
+		// char + short -> int + int = int
 		
 		// Math.round()
 		float pi = 3.141592f;

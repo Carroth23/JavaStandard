@@ -24,5 +24,8 @@ public class 조건문01 {
 		default:
 			System.out.println("x는 10입니다.");
 		}
+		
+		// 1~10 임의의 정수
+		System.out.println((int) (Math.random() * 10) + 1);
 	}
 }

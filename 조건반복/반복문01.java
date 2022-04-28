@@ -14,6 +14,12 @@ public class 반복문01 {
 			}
 			System.out.println();
 		}
+		
+		// 여러개 조건도 가능
+		for (int i = 0, j = 0; i <10; i++, j++) {
+			System.out.println("i=" + i);
+			System.out.println("j=" + j);
+		}
 
 		// while
 		int z = 0;
