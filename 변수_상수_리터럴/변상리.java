@@ -1,6 +1,6 @@
-package 변수;
+package 변수_상수_리터럴;
 
-public class 변수01 {
+public class 변상리 {
 
 	public static void main(String[] args) {
 		// 기본형 크기
@@ -25,7 +25,7 @@ public class 변수01 {
 		double d = 12.34567;
 		System.out.printf("age : %d%n", x);
 		System.out.printf("double : %.1f%n", d);
-		System.out.printf("double : %.2f", d); // 반올림됨
+		System.out.printf("double : %.2f%n", d); // 반올림됨
 		
 		// 오버플로우
 		short beforeOver = 32767;
@@ -36,6 +36,12 @@ public class 변수01 {
 		// 문자를 숫자로 변환
 		char c = '3';
 		int c2 = c - '0';
+		
+		//상수는 한번 값을 저장하면 다른값으로 변경 불가.
+		final int MAX_SPEED = 10; //상수는 대문자로 하고 단어의 구분은_로 한다.
+		
+		//리터럴은 그 자체로 값을 의미함.
+		int year = 2014; //리터럴 = 2014
 	}
 
 }
