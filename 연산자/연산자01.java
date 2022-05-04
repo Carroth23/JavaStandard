@@ -8,7 +8,7 @@ public class 연산자01 {
 		
 		// 전위형, 후위형
 		int i = 5, j =5;
-		System.out.println("전휘형 : " + ++i);
+		System.out.println("전위형 : " + ++i);
 		System.out.println("후위형 : " + j++ + ", 후위 후 j : " + j);
 		
 		// 형변환 연산자

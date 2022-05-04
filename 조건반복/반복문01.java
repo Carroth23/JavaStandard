@@ -16,7 +16,7 @@ public class 반복문01 {
 		}
 		
 		// 여러개 조건도 가능
-		for (int i = 0, j = 0; i <10; i++, j++) {
+		for (int i = 0, j = 0; i <10; i++, j*=3) {
 			System.out.println("i=" + i);
 			System.out.println("j=" + j);
 		}
