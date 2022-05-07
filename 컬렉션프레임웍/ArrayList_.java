@@ -6,6 +6,7 @@ public class ArrayList_ {
 
 	public static void main(String[] args) {
 		// 가장 많이 사용되는 컬렉션
+		// 기존의 Vector를 개선한 것(구현원리와 기능은 동일 Vector는 동기화처리가 되어있음.)
 		// Object배열을 이용해 순차적으로 데이터를 저장. 배열길이가 모자른다면 새로운 배열을 만들고 기존껄 복사해서 늘림
 		ArrayList list1 = new ArrayList(10);
 		list1.add(new Integer(5));
