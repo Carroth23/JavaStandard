@@ -8,10 +8,12 @@ public class 조건문01 {
 			System.out.println("false");
 		}
 		
+		// else블럭은 되도록 사용 안하는 방향으로 리팩토링
+		
 		int x = 10;
 		double d = 10.0;
-		switch (x) { // 정수, 상수, 문자열만 가능
-		case 7:
+		switch (x) { // 조건식 결과는 정수 또는 문자열만 가능
+		case 7:// 정수, 상수(변수 안됨), 문자열만 가능
 		case 8:
 			System.out.println("x는 8입니다.");
 			break;
