@@ -1,4 +1,4 @@
-package 조건반복;
+package ch04_조건반복;
 
 public class 조건문01 {
 	public static void main(String[] args) {

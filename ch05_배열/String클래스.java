@@ -1,4 +1,4 @@
-package 배열;
+package ch05_배열;
 
 public class String클래스 {
 	public static void main(String[] args) {

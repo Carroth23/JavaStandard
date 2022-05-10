@@ -1,6 +1,6 @@
-package 변수_상수_리터럴;
+package ch02_변수;
 
-public class 변상리 {
+public class 변수_상수_리터럴 {
 
 	public static void main(String[] args) {
 		// 변수: 하나의 값을 저장하기 위한 메모리 공간(RAM)

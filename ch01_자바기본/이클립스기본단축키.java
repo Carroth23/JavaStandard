@@ -1,4 +1,4 @@
-package 자바기본;
+package ch01_자바기본;
 
 public class 이클립스기본단축키 {
 	public static void main(String[] args) {

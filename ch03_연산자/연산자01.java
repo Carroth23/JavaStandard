@@ -1,4 +1,4 @@
-package 연산자;
+package ch03_연산자;
 
 public class 연산자01 {
 

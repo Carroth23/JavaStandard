@@ -1,10 +1,18 @@
-package 객체지향;
+package ch06_객체지향;
 
 public class OOP01 {
 
 	public static void main(String[] args) {
 		// OOP의 주요 특징
-		// 1. 코드 재사용성이 높음, 2.코드의 관리가 용이, 3. 신뢰성 높은 프로그래밍 가능
+		// 1. 코드 재사용성이 높음
+		// 2. 코드의 관리가 용이
+		// 3. 신뢰성 높은 프로그래밍 가능
+		
+		// OOP의 4대 핵심개녕
+		// 캡슐화, 상속, 추상화, 다형성
+		
+		// 클래스 -> 설계도
+		// 객체(인스턴스) -> 제품
 		
 		// 객체 배열
 		Tv[] tvArr = new Tv[3]; // Tv들을 다루기 위한 참조변수들만 만들어짐
@@ -19,7 +27,7 @@ public class OOP01 {
 }
 
 class Tv {
-	// private로 감추고 get, set으로 조작(캡슐화)
+	// private으로 감추고 get, set으로 조작(캡슐화)
 //	private String color;
 	String color = "레드";
 	boolean power;	// 멤버변수는 자동초기화가 됨.(지역변수는 안됨)

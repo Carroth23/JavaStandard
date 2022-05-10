@@ -1,4 +1,4 @@
-package 배열;
+package ch05_배열;
 
 import java.util.Arrays;
 

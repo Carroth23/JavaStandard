@@ -1,4 +1,4 @@
-package 자바기본;
+package ch01_자바기본;
 
 public class 자바01 {
 

@@ -1,4 +1,4 @@
-package 객체지향;
+package ch06_객체지향;
 
 public class OOP02 {
 
