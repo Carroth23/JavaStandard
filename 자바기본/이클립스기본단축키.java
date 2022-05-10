@@ -13,6 +13,7 @@ public class 이클립스기본단축키 {
 		// ctrl + I				자동 들여쓰기
 		// ctrl + /				한줄 주석(토글)
 		// ctrl + space			자동완성
+		// ctrl + shift + O		자동임포트
 		// Preference -> Java -> Editor -> Content Assist Auto Activation
 		// 트리거에 .abcdefghijk..등을 입력해두면 코드 칠때마다 추천단어 뜸(편리)
 		

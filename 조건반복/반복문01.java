@@ -6,6 +6,10 @@ public class 반복문01 {
 //		for (;;) {
 //			System.out.println("반복");
 //		}
+		int q = 0;
+		for(; q < 5; q++) { // 초기화 밖으로 빼기
+			System.out.println("q = " + q);
+		}
 
 		// 기본 별
 		for (int i = 1; i < 6; i++) {
@@ -45,6 +49,7 @@ public class 반복문01 {
 			System.out.println("바이" + i);
 			if(i == 4) {
 				break Loop1;
+//				continue Loop1;
 			}
 		}
 	}

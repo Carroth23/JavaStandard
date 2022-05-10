@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class 배열01 {
 
 	public static void main(String[] args) {
-		// 배열은 같은 타입으로 구성됨
+		// 배열은 같은 타입의 여러 변수를 하나의 묶음으로 다루는 것
 		// 배열의 인덱스는 0 ~ 배결길이-1 까지
+		// 배열은 한번 생성하면 그 길이를 바꿀 수 없음.(실행중에)
 		int[] arr1;					// 배열을 다룰 참조변수 선언
 		arr1 = new int[5];			// 실제 저장공간 생성
 		int[] arr2 = new int[5];	// 한줄로
@@ -22,6 +23,9 @@ public class 배열01 {
 		// 선언과 동시에 초기화
 		int[] arr3 = {1, 2, 3, 4, 5};
 		
+		int[] arr4;
+		arr4 = new int[] {1, 2, 3, 4, 5};
+		
 		// 출력
 		for(int i = 0; i < arr3.length; i++) {
 			System.out.print(arr3[i]);
@@ -34,7 +38,16 @@ public class 배열01 {
 				{100, 100, 100},
 				{70, 60, 80}
 		};
-		System.out.println(Arrays.deepToString(eArr2));
+		System.out.println(Arrays.deepToString(eArr2)); // 2차원 이상
+		System.out.println(Arrays.deepEquals(eArr, eArr2));
+		
+		// 배열의 복사
+		int[] arr5 = {6, 5, 4, 3, 1, 2};
+		int[] arr6 = Arrays.copyOf(arr5, arr5.length);
+		int[] arr7 = Arrays.copyOfRange(arr5, 1, 3);
+		
+		// 배열의 정렬
+		Arrays.sort(arr5);
 	}
 
 }

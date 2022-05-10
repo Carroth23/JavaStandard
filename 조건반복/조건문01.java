@@ -27,6 +27,7 @@ public class 조건문01 {
 			System.out.println("x는 10입니다.");
 		}
 		
+		// 0.0 <= Math.random() < 1.0
 		// 1~10 임의의 정수
 		System.out.println((int) (Math.random() * 10) + 1);
 	}
