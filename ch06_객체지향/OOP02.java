@@ -3,6 +3,18 @@ package ch06_객체지향;
 public class OOP02 {
 
 	public static void main(String[] args) {
+		// 상속: 기존의 클래스로 새로운 클래스를 작성하는 것.(코드의 재사용) 부모와 자식관계
+		// 자손은 조상의 모든 멤버를 상속받음(생성자, 초기화블럭 제외)
+		// 자손의 변경은 조상에 영향을 미치지 않음
+		// JAVA는 단일상속만을 허용함(이름같은 메서드가 부모들한테 있으면 충돌남)
+		// ~은 ~이다(is-a)
+		
+		// 포함: 클래스의 멤버로 참조변수를 선언하는 것
+		// 작은 단위의 클래스를 만들고, 이 들을 조합해서 클래스를 만듬
+		// ~은 ~을 가지고 있다(has-a)
+		
+		// Object클래스 - 모든 클래스의 조상. 조상이 없는 클래스는 자동으로 Object클래스를 상속받음
+		
 		SmartTv t = new SmartTv();
 		System.out.println(t.power);
 		t.channelUp();
