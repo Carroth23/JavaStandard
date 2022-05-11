@@ -13,3 +13,14 @@ public class Hello {
 	}
 
 }
+
+class Qwe{
+	int x;
+	Qwe(){
+		this(10);
+	}
+	
+	Qwe(int x){
+		this.x = x;
+	}
+}
