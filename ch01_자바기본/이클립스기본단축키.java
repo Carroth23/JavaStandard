@@ -11,6 +11,7 @@ public class 이클립스기본단축키 {
 		// alt + up, down		행단위 이동
 		// tab, shift + tab		들여쓰기, 내어쓰기
 		// ctrl + I				자동 들여쓰기
+		// ctrl + shift + F		자동정렬
 		// ctrl + /				한줄 주석(토글)
 		// ctrl + space			자동완성
 		// ctrl + shift + O		자동임포트
