@@ -48,6 +48,10 @@ public class OOP02 {
 			}
 		}
 		
+		// 다형성: 조상타입 참조 변수로 자손 타입 객체를 다루는 것
+		// 참조변수의 형변환: 사용할 수 있는 멤버의 갯수를 조절하는 것
+		// 자손타입으로 조상가르키면 컴파일되지만 런타임 에러남
+		
 		SmartTv t = new SmartTv();
 		System.out.println(t.power);
 		t.channelUp();
