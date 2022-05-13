@@ -52,6 +52,20 @@ public class OOP02 {
 		// 참조변수의 형변환: 사용할 수 있는 멤버의 갯수를 조절하는 것
 		// 자손타입으로 조상가르키면 컴파일되지만 런타임 에러남
 		
+		// 추상클래스: 미완성 설계도. abstract메서드(미완성메서드)를 갖고있는 클래스
+		
+		// 인터페이스: 추상메서드의 집합 (구현된게 아무것도 없음, 모든 멤버가 public), 두 대상(객체)간의 중간역할
+		// 인터페이스의 조상은 인터페이스만 가능(extends 사용)
+		// 다중 상속 가능(추상메서드니까 충돌해도 문제없음)
+		// implements키워드를 사용하여 내려받아 몸통을 만듬.(구현)
+		// 장점 1.개발시간 단축 2.변경에 유리한 설계가능 3.표준화 가능 4.관계없는 클래스들을 관계를 맺어줄 수 있음
+		// 새로운 메서드 추가시에 파장을 줄이기 위해 default메서드(몸통이 있는 메서드) 추가
+		
+		// 내부클래스
+		
+		// 익명 클래스: 이름이 없는 일회용 클래스. 정의와 생성을 동시에
+		// new 조상클래스이름(){}, 혹은 new 구현인터페이스이름() {}
+		
 		SmartTv t = new SmartTv();
 		System.out.println(t.power);
 		t.channelUp();
@@ -94,6 +108,7 @@ class SmartTv extends Tv { // 상속, 상속은 단일상속만 가능
 
 // 인터페이스 기본
 interface Proc{
+	int X = 10;	 // public static final int X = 10;
 	void porc(); // public abstract void proc();
 	default void prro() {}; // 구현 안해도 되는 메서드
 	static void proos() {};

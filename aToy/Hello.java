@@ -3,18 +3,30 @@ package aToy;
 public class Hello {
 
 	public static void main(String[] args) {
-		Q q = new Q();
-		W w = new W();
-		if(q instanceof W) {
-			System.out.println("가능");
-		}
+		A a = new A();
+		a.mea(new C());
 	}
 }
 
-class Q{
-	int a = 10;
+class A {
+	public void mea(I i) {
+		i.met();
+	}
 }
 
-class W extends Q{
-	int b = 20;
+class B implements I{
+	public void met() {
+		System.out.println("메서드비");
+	}
 }
+
+class C implements I {
+	public void met() {
+		System.out.println("메서드씨");
+	}
+}
+
+interface I {
+	void met();
+}
+
