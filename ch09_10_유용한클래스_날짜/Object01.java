@@ -1,11 +1,12 @@
-package 유용한클래스;
+package ch09_10_유용한클래스_날짜;
 
-public class JavaLang01 {
+public class Object01 {
 	public static void main(String[] args) {
 		Value v1 = new Value(10);
 		Value v2 = new Value(10);
 		
-		// equals는 주소값으로 비교함
+		// equals는 주소값으로 비교함 (그래서 내용을 비교할 수 있게 오버라이딩해주는것이 좋다)
+		// equals를 오버라이딩한다면 hashCode()도 오버라이딩 해야함
 		if(v1.equals(v2)) {
 			System.out.println("같습니다.");
 		} else {

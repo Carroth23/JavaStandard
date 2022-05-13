@@ -1,4 +1,4 @@
-package 컬렉션프레임웍;
+package ch11_컬렉션프레임웍;
 
 public class 컬렉션 {
 

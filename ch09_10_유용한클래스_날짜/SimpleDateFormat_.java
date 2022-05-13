@@ -1,4 +1,4 @@
-package 유용한클래스;
+package ch09_10_유용한클래스_날짜;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,7 +14,7 @@ public class SimpleDateFormat_ {
 		
 		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy년 MM월 dd일");
 		String d2 = "2022년 3월 15일";
-		System.out.println(sdf2.parse(d2));
+		System.out.println(sdf2.parse(d2)); // 문자열을 날짜데이터로 바꾸기
 	}
 
 }

@@ -1,4 +1,4 @@
-package 컬렉션프레임웍;
+package ch11_컬렉션프레임웍;
 
 import java.util.ArrayList;
 import static java.util.Collections.*; // static메서드들을 클래스이름없이 쓰게해줌
