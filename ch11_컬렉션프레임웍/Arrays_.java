@@ -1,13 +1,12 @@
 package ch11_컬렉션프레임웍;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Arrays_ {
 
 	public static void main(String[] args) {
-		// 배열을 다루는데 유용한 메서드가 많은 Arrays
+		// 배열을 다루는데 유용한 메서드(static)가 많은 Arrays
 		// toString()
 		int[] arr = {1, 2, 3, 4, 5};
 		System.out.println(Arrays.toString(arr)); // 배열 출력

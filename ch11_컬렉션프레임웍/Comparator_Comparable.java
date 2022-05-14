@@ -32,3 +32,13 @@ class Descending implements Comparator{
 		return -1;
 	}
 }
+
+class Descending2 implements Comparable{
+
+	@Override
+	public int compareTo(Object o) { // 주어진 객체를 자신과 비교
+		// 같으면 0, 오른쪽이 크면 -1, 작으면 1을 반환
+		return 0;
+	}
+	
+}

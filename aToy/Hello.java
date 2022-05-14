@@ -1,18 +1,23 @@
 package aToy;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Hello {
 
 	public static void main(String[] args) throws ParseException {
-		Date today = new Date();
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat df2 = new SimpleDateFormat("yyyy년 MM월 dd");
-		Date d = df2.parse("2022년 12월 23");
-//		String re = df.format(today);
-		System.out.println(d);
-//		System.out.println(re);
+		Set set = new HashSet();
+		
+		for(int i = 0; set.size() < 6; i++) {
+			set.add((int)(Math.random() * 45) + 1);
+		}
+		System.out.println(set);
+		List list = new ArrayList(set);
+		Collections.sort(list);
+		System.out.println(list);
 	}
 }
