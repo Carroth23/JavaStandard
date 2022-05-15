@@ -1,4 +1,4 @@
-package 열거형;
+package ch12_열거형;
 
 public class 열거형01 {
 	// 열거형: 관련된 상수들을 같이 묶어 놓은것.(객체임)
@@ -7,8 +7,10 @@ public class 열거형01 {
 		// 열거형 이름   o,     1,    2,     3 자동초기화
 	
 	public static void main(String[] args) {
-//		if(Direction.EAST == Direction2.EAST) 타입을 먼저체크. 컴파일 에러
+		
+//		if(Direction.EAST == Direction2.EAST) 타입을 먼저체크. 컴파일 에러(타입에 안전)
 		System.out.println(Direction.EAST);
+		
 		Direction dir; //열거형 변수 선언
 		dir = Direction.NORTH; // dir에는 해당 열거형 상수만 들어올 수 있음
 		System.out.println(dir);
@@ -34,7 +36,7 @@ public class 열거형01 {
 		
 		Direction[] dArr = Direction.values(); // 열거형의 모든 상수를 배열로 반환
 		for(Direction d : dArr) {
-			System.out.println(d.name() + ", " + d.ordinal()); // ordinal은 값이 아니라 순서
+			System.out.println(d.name() + ", " + d.ordinal()); // ordinal은 값이 아니라 정의된 순서
 		}
 	}
 

@@ -46,7 +46,7 @@ class TestComp implements Comparator {
 	@Override
 	public int compare(Object o1, Object o2) {
 		// TODO Auto-generated method stub
-		return 0; // 0이면 같음, -1이면 왼쪽이 크고 양수면 오른쪽이 큼
+		return 0; // 0이면 같음, 왼쪽이 크면 양수, 오른쪽이 크면 음수
 	}
 	
 }

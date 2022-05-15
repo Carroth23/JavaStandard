@@ -1,4 +1,4 @@
-package 지네릭스;
+package ch12_지네릭스;
 
 import java.util.ArrayList;
 import java.util.HashSet;
