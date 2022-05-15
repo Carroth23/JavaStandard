@@ -37,8 +37,11 @@ public class HashSet_ {
 		HashSet ss = new HashSet();
 		ss.add(new Person("나", 10));
 		ss.add(new Person("나", 10));
-		
 		System.out.println(ss);
+		
+		// setA.retainAll(setB); 	교집합. 공통된 요소만 남기고 삭제
+		// setA.addAll(setB);		합집합. setB의 모든 요소를 추가(중복 제외)
+		// setA.removeAll(setB);	차집합. setB와 공통 요소를 제거
 	}
 
 }
